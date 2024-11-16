@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover healthy, easy-to-make recipes, nutritious meals for weight loss, and clean eating tips. Perfect for busy people looking to eat well.">
+    <meta name="keywords" content="healthy recipes, nutritious meals, weight loss recipes, plant-based meals, easy healthy meals, clean eating tips, quick healthy recipes">
+    <meta name="author" content="Nourish Daily">
+    <title>Nourish Daily | Healthy Recipes & Nutrition Tips</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+
+        /* Container Layout */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .content {
+            flex: 0 0 70%;
+            background-color: white;
+            padding: 20px;
+            margin-right: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            flex: 0 0 28%;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Recipe List */
+        .recipe-list ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .recipe-list li {
+            margin-bottom: 25px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .recipe-list li:hover {
+            transform: translateY(-10px);
+        }
+
+        .recipe-list img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .recipe-list a {
+            color: #4CAF50;
+            font-size: 1.6em;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        .recipe-list a:hover {
+            text-decoration: underline;
+        }
+
+        .dropdown {
+            cursor: pointer;
+            color: #4CAF50;
+            font-weight: bold;
+            padding: 12px;
+            background-color: #f7f7f7;
+            border: 2px solid #4CAF50;
+            border-radius: 5px;
+            width: 100%;
+            margin-top: 10px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+
+        .dropdown:hover {
+            background-color: #e8f5e9;
+        }
+
+        .dropdown-content {
+            display: none;
+            padding: 15px;
+            background-color: #fafafa;
+            border: 2px solid #ddd;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .dropdown-content h4 {
+            margin-top: 0;
+        }
+
+        .dropdown-content p {
+            margin: 5px 0;
+        }
+
+        .adsense {
+            width: 100%;
+            height: 250px;
+            background-color: #e1e1e1;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        footer ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        /* Media Queries for Mobile */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .content {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Nourish Daily</h1>
+    <p>Your Go-To Source for Healthy, Nutritious Recipes</p>
+</header>
+
+<div class="container">
+    <div class="content">
+        <h2>Healthy Recipes for a Better You</h2>
+        <div class="recipe-list">
+            <!-- Recipe 1: Avocado Toast -->
+            <li>
+                <img src="images\avacado-toast.jpg" alt="Avocado Toast">
+                <a href="#">10-Minute Avocado Toast</a>
+                <div class="dropdown" onclick="toggleDropdown('recipe1')">Show Recipe &#x25BC;</div>
+                <div class="dropdown-content" id="recipe1">
+                    <h4>Ingredients:</h4>
+                    <ul>
+                        <li>1 ripe avocado</li>
+                        <li>2 slices of whole-grain bread</li>
+                        <li>1 tbsp olive oil</li>
+                        <li>Salt and pepper to taste</li>
+                        <li>Optional: lemon juice, red pepper flakes</li>
+                    </ul>
+                    <h4>Instructions:</h4>
+                    <p>1. Toast the bread to your desired crispness.</p>
+                    <p>2. Mash the avocado with a fork until smooth.</p>
+                    <p>3. Drizzle with olive oil, and add salt and pepper.</p>
+                    <p>4. Spread the avocado mixture over the toasted bread. Optionally, add a squeeze of lemon juice and sprinkle with red pepper flakes for an extra flavor kick.</p>
+                    <p>Perfect for a quick breakfast or a healthy snack!</p>
+                </div>
+            </li>
+
+            <div class="adsense">
+                <!-- Placeholder for Google AdSense Footer Ad -->
+                <p>AdSense Ad will appear here</p>
+            </div>
+
+            <!-- Recipe 2: Green Smoothie -->
+            <li>
+                <img src="images/green-smoothie.jpg" alt="Green Smoothie">
+                <a href="#">Refreshing Green Smoothie</a>
+                <div class="dropdown" onclick="toggleDropdown('recipe2')">Show Recipe &#x25BC;</div>
+                <div class="dropdown-content" id="recipe2">
+                    <h4>Ingredients:</h4>
+                    <ul>
+                        <li>1 banana</li>
+                        <li>1 cup fresh spinach</li>
+                        <li>1/2 cup almond milk (or other milk of choice)</li>
+                        <li>1 tbsp chia seeds</li>
+                        <li>1/2 cup ice (optional)</li>
+                    </ul>
+                    <h4>Instructions:</h4>
+                    <p>1. Place all ingredients into a blender.</p>
+                    <p>2. Blend on high until smooth and creamy.</p>
+                    <p>3. Serve immediately for a refreshing, nutrient-packed start to your day!</p>
+                </div>
+            </li>
+
+            <!-- More recipes can be added here following the same structure -->
+        </div>
+
+        <div class="adsense">
+            <!-- Placeholder for Google AdSense Footer Ad -->
+            <p>AdSense Ad will appear here</p>
+        </div>
+    </div>
+
+
+</div>
+
+<footer>
+    <p>&copy; 2024 Nourish Daily | All Rights Reserved</p>
+    <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Contact Us</a></li>
+    </ul>
+    <h3>Resources & Citations</h3>
+    <ul>
+        <li><a href="#">Nutrition 101: The Basics - Healthline</a></li>
+        <li><a href="#">How to Start Eating Clean - Mayo Clinic</a></li>
+        <li><a href="#">The Importance of Whole Grains - WebMD</a></li>
+    </ul>
+</footer>
+
+<script>
+    function toggleDropdown(recipeId) {
+        var content = document.getElementById(recipeId);
+        if (content.style.display === "none" || content.style.display === "") {
+            content.style.display = "block";
+        } else {
+            content.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
